@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <title>{{ isset($title) ? $title . ' - Chirper' : 'Chirper'}}</title>
-    <style>
-        body{
-            margin:0;
-            font-family: Arial, sans-serif;
-        }
-        header, footer{
-            background:#2c3e50;
-            color:white;
-            padding:15px;
-            text-align:center;
-        }
-        main{
-            padding:20px;
-            min-height:70vh;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+
+    <!-- Vite -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
 
-    <!-- Header -->
-    <header>
-        <h2>My Website</h2>
-        <p>Welcome to my homepage</p>
-    </header>
+<body class="bg-bg text-text font-sans antialiased">
 
-    <!-- Page Content -->
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-border">
+        <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+
+            <a href="#hero" class="font-semibold tracking-tight">
+                my<span class="text-accent">.</span>portfolio
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 text-sm">
+                <a href="#about" class="text-muted hover:text-text transition">About</a>
+                <a href="#skills" class="text-muted hover:text-text transition">Skills</a>
+                <a href="#projects" class="text-muted hover:text-text transition">Projects</a>
+                <a href="#contact" class="text-muted hover:text-text transition">Contact</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
     <main>
         {{ $slot }}
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; {{ date('Y') }} My Website. All rights reserved.</p>
+    <!-- FOOTER -->
+    <footer class="border-t border-border text-center text-sm text-muted py-8 px-6">
+        <p>© {{ date('Y') }} Kenjie G. Mañego. All rights reserved.</p>
     </footer>
 
 </body>
