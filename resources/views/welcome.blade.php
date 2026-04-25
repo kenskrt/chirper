@@ -42,7 +42,7 @@
                 <div class="absolute inset-0 bg-accent/30 rounded-full blur-3xl"></div>
 
                 <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full border border-border bg-bg-card overflow-hidden shadow-2xl">
-                    <img src="{{ asset('images/Profile.jpg') }}" 
+                    <img src="{{ asset('images/Profile.JPG') }}" 
                          alt="Profile Image"
                          class="w-full h-full object-cover">
                 </div>
