@@ -1,6 +1,12 @@
-FROM richarvey/nginx-php-fpm:latest
+FROM dunglas/frankenphp:php8.4
+
+WORKDIR /app
 
 COPY . .
+
+RUN apt-get update && apt-get install -y \
+    git unzip curl nodejs npm \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN composer install --no-dev --optimize-autoloader
 
@@ -10,4 +16,10 @@ RUN php artisan config:clear
 RUN php artisan route:clear
 RUN php artisan view:clear
 
-ENV WEBROOT=/var/www/html/public
+ENV SERVER_NAME=:8080
+ENV APP_ENV=production
+ENV APP_DEBUG=false
+
+EXPOSE 8080
+
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
