@@ -1,5 +1,7 @@
 <x-layout>
 
+
+<span id="cursor">_</span>
 <!-- HERO -->
 <section id="hero" class="relative min-h-screen flex items-center px-6 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10"></div>
@@ -9,8 +11,8 @@
     <div class="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         <div class="space-y-6">
-            <div class="inline-flex items-center gap-2 text-accent bg-bg-card/60 backdrop-blur border border-accent/30 px-4 py-1.5 rounded-full text-xs font-medium shadow">
-                <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+            <div class="inline-flex items-center gap-2 text-green-500 bg-bg-card/60 backdrop-blur border border-green-600 px-4 py-1.5 rounded-full text-xs font-medium shadow">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                 Available for work
             </div>
 
@@ -235,15 +237,54 @@
     </div>
 </section>
 
-<style>
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-14px);
-        }
-    }
-</style>
+
+<section id="contact" class="px-10 py-20 border-t border-border">
+
+    <div class="max-w-4xl mx-auto">
+
+        <div class="bg-[#0c0c0c] border border-gray-700 rounded-lg overflow-hidden shadow-2xl">
+
+            <!-- CMD Header -->
+            <div class="bg-[#2d2d30] px-4 py-2 flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+
+                <span class="text-gray-300 text-sm ml-3">
+                    Command Prompt
+                </span>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-5 font-mono text-green-400 min-h-[350px]">
+
+                <div id="output">
+                    <p>Microsoft Windows [Version 10.0.19045]</p>
+                    <p>(c) Microsoft Corporation. All rights reserved.</p>
+                    <br>
+                    <p>Type: skills, about, projects</p>
+                    <br>
+                </div>
+
+                <div class="flex items-center">
+                    <span>C:\Users\Kenjie&gt;</span>
+
+                    <input
+                        type="text"
+                        id="command"
+                        class="flex-1 bg-transparent outline-none ml-2 text-green-400"
+                        autocomplete="off"
+                        autofocus
+                    >
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 </x-layout>
